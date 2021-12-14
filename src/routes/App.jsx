@@ -15,6 +15,7 @@ const App = () => {
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route exact path="/save" element={<Save />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
