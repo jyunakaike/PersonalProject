@@ -12,7 +12,10 @@ const Header = () => {
            
 
             <div className="navbar-right">
+                
                 <ul>
+                    <li><a href="/">Finance</a></li>
+
                     <li className="navbar-email">ejemplo@ejemplo</li>
                 </ul>
             </div>

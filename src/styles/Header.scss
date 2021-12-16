@@ -1,8 +1,10 @@
+@use 'vars';
 nav {
 	display: flex;
 	justify-content: space-between;
 	padding: 0 24px;
 	border-bottom: 1px solid pink;
+	background-color: var(--middleBlueGreen) ;
 }
 // .menu {
 // 	display: none;
@@ -39,7 +41,7 @@ nav {
 	color: green;
 }
 .navbar-email {
-	color: pink;
+	color: var(--darkJungleGreen);
 	font-size: 14px;
 	margin-right: 12px;
 }

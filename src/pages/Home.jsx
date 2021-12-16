@@ -1,9 +1,10 @@
 import React from "react";
+import TaskList from "@components/TaskList";
 
 const Home = () => {
     return (
         <React.Fragment>
-            Este es el homeaaaaaa
+             <TaskList></TaskList>
         </React.Fragment>
 
     );

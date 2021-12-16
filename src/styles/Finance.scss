@@ -1,0 +1,84 @@
+@use 'vars';
+
+.financeList{
+    display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        // place-content: center;
+    gap: 10px;
+    // margin: 25px;
+    // align-content: center;
+
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+.gain{
+    width: 400px;
+    height: 350px;
+
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    // display: flex;
+    //     justify-content: center;
+    //     align-content: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+    // place-content: center;
+}
+.spend{
+    width: 400px;
+    height: 350px;
+
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+    // place-content: center;
+}
+
+.savingAccount{
+    width: 400px;
+    height: 350px;
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+}
+
+.title{
+    display: flex;
+        justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.detail{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 25px;
+
+}
+
+.financeHistorial{
+    display: grid;
+        grid-template-columns: 1fr;
+        // place-content: center;
+    gap: 10px;
+    // margin: 25px;
+    // align-content: center;
+
+    margin: auto;
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+.historialBox{
+    border: solid 1px;
+    border-radius: 8px ;
+
+}
+

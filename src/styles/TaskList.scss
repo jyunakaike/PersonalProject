@@ -1,0 +1,35 @@
+@use 'vars';
+// .home-container{
+// }
+.taskList {
+    /* background-color: green; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 26px;
+    // place-content: center;
+    // margin: 25px;
+    margin: auto;
+    max-width: 1700px;
+    margin-top: 30px;
+}
+
+.task {
+    width: 500px;
+    height: 240px;
+
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    display: flex;
+        justify-content: center;
+        align-content: center;
+    padding: auto;
+}
+
+.task:hover{
+    background-color: var(--beauBlue);
+
+}
+
+
+
