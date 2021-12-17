@@ -69,6 +69,32 @@
 }
 
 
+.financial-input{
+    border-radius: 8px;
+    width: auto;
+    height: 50px;
+    background-color: var(--beauBlue);
+    border: 0;
+
+    text-align: right;
+    
+ 
+    background-image: url(@icons/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 7px 15px;
+}
+.financial-input:hover{
+    background-color: var(--middleBlueGreen);
+}
+
+.financial-input:focus{
+    border: 0;
+    background-color: var(--middleBlueGreen);
+    cursor: pointer;
+}
+
+
+
 .gain{
     grid-column: 2;
     grid-row: 1;

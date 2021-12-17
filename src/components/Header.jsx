@@ -9,10 +9,7 @@ const Header = () => {
             Personal Project
             </div>
 
-           
-
             <div className="navbar-right">
-                
                 <ul>
                     <li><a href="/">Finance</a></li>
 

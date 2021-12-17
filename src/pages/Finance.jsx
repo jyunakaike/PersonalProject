@@ -27,9 +27,10 @@ const Finance = () => {
                     </div>
                     <div className='detail'>
                         <h2>Monto</h2>
-                        <input type="text" />
-                        tipo de Gasto
-                        <input type="text" />
+                        <input type="text" className='financial-input' />
+
+                        tipo de ganancia
+                        <input type="text" className='financial-input' />
                     </div>
                 </div>
 
@@ -41,9 +42,9 @@ const Finance = () => {
                     </div>
                     <div className='detail'>
                         <h2>Monto</h2>
-                        <input type="text" />
+                        <input type="text" className='financial-input' />
                         tipo de Gasto
-                        <input type="text" />
+                        <input type="text" className='financial-input' />
                     </div>
                 </div>
 
@@ -55,9 +56,9 @@ const Finance = () => {
                     </div>
                     <div className='detail'>
                         <h2>Monto</h2>
-                        <input type="text" />
+                        <input type="text"  className='financial-input'/>
                         tipo de Gasto
-                        <input type="text" />
+                        <input type="text" className='financial-input' />
                     </div>
                 </div>
 
