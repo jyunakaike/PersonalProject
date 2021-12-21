@@ -8,7 +8,25 @@ const Finance = () => {
     // const spends = InitialState.spends
 
     // let total = 0;
+    let gainTotal = 0;
+    let spendTotal = 0;
+    
+    const totalGains = gains
+            .filter(gain => gain.description === 'gain')
+            .map( gain => gain.price)
+            .reduce((total, gain)=> {
+                gainTotal= total + gain
+                return gainTotal
+            } )
+    
+    const totalSpends= gains
+            .filter(gain => gain.description === 'spend')
+            .map( gain => gain.price)
+            .reduce((total, gain)=> { 
+                spendTotal = total + gain
+                return spendTotal } )
 
+    const total= gainTotal - spendTotal;
 
     return (
         <div className='finance-container'>
@@ -28,32 +46,17 @@ const Finance = () => {
 
                             <div>
                                 total gains :
-                                {
-                                    gains
-                                        .filter(gain => gain.description === 'gain')
-                                        .map( gain => gain.price)
-                                        .reduce((total, gain)=> total + gain,0 )
-                                }
+                                { totalGains }
+                                
                             </div>
                             <div>
                                 total spends : 
-                                {
-                                    gains
-                                        .filter(gain => gain.description === 'spend')
-                                        .map( gain => gain.price)
-                                        .reduce((total, gain)=> total + gain,0 )
-                                }
+                                { totalSpends }
                             </div>
 
                             <div>
-                                totals
+                                totals:{ total }
                             </div>
-
-
-
-
-
-
                         </div>
                     </div>
 
