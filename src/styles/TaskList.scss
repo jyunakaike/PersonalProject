@@ -1,6 +1,12 @@
 @use 'vars';
 // .home-container{
 // }
+
+
+// a is for Link
+a{
+    text-decoration: none;
+}
 .taskList {
     /* background-color: green; */
     display: grid;

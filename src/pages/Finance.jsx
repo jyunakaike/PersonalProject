@@ -1,22 +1,69 @@
 import React from 'react'
 import '@styles/Finance.scss'
+import InitialState from '../InitialState'
+
 
 const Finance = () => {
+    const gains = InitialState.gains
+    // const spends = InitialState.spends
+
+    // let total = 0;
+
+
     return (
         <div className='finance-container'>
             <h1>Finance</h1>
-
             <div className='cardsList'>
                 <div className='total'>
-                    <div className='totalLine' />
-                    <div className='title'>
-                        <h1>total</h1>
-                        <h1>***</h1>
+
+                    <div className='total-detail'>
+                        {/* <div className='totalLine' /> */}
+                        <div className='title'>
+                            <h1>total</h1>
+                            <h1>***</h1>
+                        </div>
+                        <div className='detail'>
+                            {/* <input type="text" /> */}
+                            <h1>Mostrar datos</h1>
+
+                            <div>
+                                total gains :
+                                {
+                                    gains
+                                        .filter(gain => gain.description === 'gain')
+                                        .map( gain => gain.price)
+                                        .reduce((total, gain)=> total + gain,0 )
+                                }
+                            </div>
+                            <div>
+                                total spends : 
+                                {
+                                    gains
+                                        .filter(gain => gain.description === 'spend')
+                                        .map( gain => gain.price)
+                                        .reduce((total, gain)=> total + gain,0 )
+                                }
+                            </div>
+
+                            <div>
+                                totals
+                            </div>
+
+
+
+
+
+
+                        </div>
                     </div>
-                    <div className='detail'>
-                        {/* <input type="text" /> */}
-                        <h1>Mostrar datos</h1>
+
+                    <div className='total-period'>
+                        <div>dayly</div>
+                        <div>weekly</div>
+                        <div>monthly</div>
                     </div>
+
+
                 </div>
 
                 <div className='gain' >
@@ -56,7 +103,7 @@ const Finance = () => {
                     </div>
                     <div className='detail'>
                         <h2>Monto</h2>
-                        <input type="text"  className='financial-input'/>
+                        <input type="text" className='financial-input' />
                         tipo de Gasto
                         <input type="text" className='financial-input' />
                     </div>
@@ -67,8 +114,21 @@ const Finance = () => {
                     <div className='title'>
                         <h1>Monton de datos</h1>
                     </div>
-                    <div className='detail'>
-                        <h2>Tabla </h2>
+                    <div className='detail' >
+                        {/* {gains.map(gain => 
+                        <div>
+                            {gain.price} $
+                        </div>
+                            
+                        )} */}
+                        {
+                            gains
+                                .filter(gain => gain.description === 'gain')
+                                .map(gain =>
+                                    <div>{gain.price}</div>
+                                )
+                        }
+
                     </div>
                 </div>
 
@@ -77,8 +137,15 @@ const Finance = () => {
                     <div className='title'>
                         <h1>Monton de datos</h1>
                     </div>
-                    <div className='detail'>
-                        <h2>tabla</h2>
+                    <div className='detail' >
+                        {
+                            gains
+                                .filter(gain => gain.description === 'spend')
+                                .map(gain =>
+                                    <div>{gain.price}</div>
+                                )
+                        }
+
                     </div>
                 </div>
 
