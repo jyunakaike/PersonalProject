@@ -83,9 +83,9 @@
     text-align: right;
     
  
-    background-image: url(@icons/icon-dollar.svg);
-    background-repeat: no-repeat;
-    background-position: 7px 15px;
+    // background-image: url(@icons/icon-dollar.svg);
+    // background-repeat: no-repeat;
+    // background-position: 7px 15px;
 }
 .financial-input:hover{
     background-color: var(--middleBlueGreen);
@@ -221,12 +221,20 @@
     padding-left: 50px;
     padding-right: 50px;
 }
+.title-save{
+    display: flex;
+    flex-direction: column;
+
+    // padding-left: 50px;
+    // padding-right: 50px;
+}
 
 .detail{
     padding-left: 50px;
     padding-right: 50px;
     font-size: 25px;
     display: grid;
+    
         
 
 }
