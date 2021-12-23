@@ -13,18 +13,18 @@ const Finance = () => {
     let gainTotal = 0;
     let spendTotal = 0;
     const totalGains = gain
-        .filter(gain => gain.description === 'gain')
-        .map(gain => gain.price)
-        .reduce((total, gain) => {
-            gainTotal = total + gain
+        .filter(item => item.description === 'gain')
+        .map(item => item.price)
+        .reduce((total, item) => {
+            gainTotal = total +  parseInt(item)
             return gainTotal
         })
 
     const totalSpends = gain
-        .filter(gain => gain.description === 'spend')
-        .map(gain => gain.price)
-        .reduce((total, gain) => {
-            spendTotal = total + gain
+        .filter(item => item.description === 'spend')
+        .map(item => item.price)
+        .reduce((total, item) => {
+            spendTotal = total + parseInt(item)
             return spendTotal
         })
 
