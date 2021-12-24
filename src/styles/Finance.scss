@@ -99,7 +99,7 @@
 
 
 
-.gain{
+.income{
     grid-column: 2;
     grid-row: 1;
     width: 400px;
@@ -115,13 +115,13 @@
     // grid-template-rows: 1fr 2fr ;
     // place-content: center;
 }
-.gainLine{
+.incomeLine{
     background-color: #136F63 ;
     width: auto;
     height: 5%;
     border-radius: 8px;
 }
-.spend{
+.expense{
     grid-column: 3;
     grid-row: 1;
     width: 400px;
@@ -135,7 +135,7 @@
     // grid-template-rows: 1fr 2fr ;
     // place-content: center;
 }
-.spendLine{
+.expenseLine{
     background-color: #D81159 ;
     width: auto;
     height: 5%;
@@ -162,7 +162,7 @@
 }
 
 
-.gain2{
+.income2{
     grid-column: 2;
     grid-row: 2;
     width: 400px;
@@ -178,7 +178,7 @@
     // grid-template-rows: 1fr 2fr ;
     // place-content: center;
 }
-.spend2{
+.expense2{
     grid-column: 3;
     grid-row: 2;
     width: 400px;

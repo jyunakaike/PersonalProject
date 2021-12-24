@@ -4,71 +4,69 @@ import InitialState from '../InitialState'
 
 
 const Finance = () => {
-    // const gains = InitialState.gains
-
-
-    const [gain, setGain] = useState(InitialState.gains)
+    const [fund, setFund] = useState(InitialState.deposit)
 
     // for total
-    let gainTotal = 0;
-    let spendTotal = 0;
-    const totalGains = gain
-        .filter(item => item.description === 'gain')
+    let IncomesTotal = 0;
+    let ExpensesTotal = 0;
+    const totalIncomes = fund
+        .filter(item => item.description === 'income')
         .map(item => item.price)
         .reduce((total, item) => {
-            gainTotal = total +  parseInt(item)
-            return gainTotal
+            IncomesTotal = total +  parseInt(item)
+            return IncomesTotal
         })
 
-    const totalSpends = gain
-        .filter(item => item.description === 'spend')
+    const totalExpenses = fund
+        .filter(item => item.description === 'expense')
         .map(item => item.price)
         .reduce((total, item) => {
-            spendTotal = total + parseInt(item)
-            return spendTotal
+            ExpensesTotal = total + parseInt(item)
+            return ExpensesTotal
         })
 
-    const total = gainTotal - spendTotal;
+    const total = IncomesTotal - ExpensesTotal;
 
-    // gain logic
-    // form gain
-    const formGain = useRef(InitialState);
-    // for gain
-    const guardarGain = () => {
-        const formData = new FormData(formGain.current)
+    // Incomes logic
+    // form Incomes
+    const formIncome = useRef(InitialState);
+    
+    const guardarIncome = () => {
+        const formData = new FormData(formIncome.current)
         const data = {
             'id': '29',
             'price': formData.get('financialInput'),
-            'description': 'gain',
+            'description': 'income',
             'type': formData.get('type'),
         }
-        const addGain = data => {
-            setGain(
-                gain => [...gain, data]
-            )
-        }
-        addGain(data)
-    }
-
-    // spend logic 
-    // form spend
-    const formSpend = useRef(InitialState);
-    // 
-    const guardarSpend = () => {
-        const formData = new FormData(formSpend.current)
-        const data = {
-            'id': '256',
-            'price': formData.get('financialInput'),
-            'description': 'spend',
-            'type': formData.get('type'),
-        }
-        const addSpend = data => {
-            setGain(
-                gain => [...gain, data]
+        const addIncome = data => {
+            setFund(
+                fund => [...fund, data]
             )
         }
         console.log(data)
-        addSpend(data)
+        addIncome(data)
+    }
+
+    // Expense logic 
+    // form Expense
+    const formExpense = useRef(InitialState);
+    // 
+    const guardarExpense = () => {
+        const formData = new FormData(formExpense.current)
+        const data = {
+            'id': '256',
+            'price': formData.get('financialInput'),
+            'description': 'expense',
+            'type': formData.get('type'),
+        }
+        const addExpense = data => {
+            setFund(
+                fund => [...fund, data]
+            )
+        }
+        console.log(data)
+        addExpense(data)
     }
 
 
@@ -89,13 +87,13 @@ const Finance = () => {
                             <h1>Mostrar datos</h1>
 
                             <div>
-                                total gains :
-                                {totalGains}
+                                total Incomes :
+                                {totalIncomes}
 
                             </div>
                             <div>
-                                total spends :
-                                {totalSpends}
+                                total Expenses :
+                                {totalExpenses}
                             </div>
 
                             <div>
@@ -111,39 +109,38 @@ const Finance = () => {
                     </div>
                 </div>
 
-                <div className='gain' >
-                    <div className='gainLine' />
+                <div className='income' >
+                    <div className='incomeLine' />
                     <div className='title'>
-                        <h1>Gains</h1>
+                        <h1>Incomes</h1>
 
-                        <div onClick={guardarGain} ><h1>Guardar</h1></div>
+                        <div onClick={guardarIncome} ><h1>Guardar</h1></div>
                     </div>
-                    <form action="/" ref={formGain}>
+                    <form action="/" ref={formIncome}>
                         <div className='detail'>
-                            salary
+                            Funds
                             <input type="text" className='financial-input' name='financialInput' />
-
-                            tipo de ganancia
+                            Type
                             {/* <input type="text" className='financial-input' /> */}
-                            <select name='gainSelector' id='gainSelector' className='financial-input' name='type'>
+                            <select name='IncomeSelector' id='IncomeSelector' className='financial-input' name='type'>
                                 <option value="salary">salary</option>
                             </select>
                         </div>
                     </form>
                 </div>
 
-                <div className='spend' >
-                    <div className='spendLine' />
+                <div className='expense' >
+                    <div className='expenseLine' />
                     <div className='title'>
-                        <h1>Spends </h1>
+                        <h1>Expenses </h1>
                         {/* <h1>***</h1> */}
-                        <div onClick={guardarSpend} ><h1>Guardar</h1></div>
+                        <div onClick={guardarExpense} ><h1>Guardar</h1></div>
                     </div>
-                    <form action="/" ref={formSpend}>
+                    <form action="/" ref={formExpense}>
                         <div className='detail'>
-                            Monto
+                            Funds
                             <input type="text" className='financial-input' name='financialInput'/>
-                            tipo de Gasto
+                            Type
                             <input type="text" className='financial-input' name='type'/>
                         </div>
                     </form>
@@ -159,7 +156,7 @@ const Finance = () => {
                         Monto
                         <div>10% 20% 30% custom</div>
 
-                        <p>tipo de ahorro</p>
+                        <p>Type</p>
                         {/* <input type="text" className='financial-input' /> */}
                         <select name="saveSelector" id='saveSelector' className='financial-input'>
                             <option value="Emergency">Emergency</option>
@@ -169,33 +166,33 @@ const Finance = () => {
                     </div>
                 </div>
 
-                <div className='gain2' >
-                    <div className='gainLine' />
+                <div className='income2' >
+                    <div className='incomeLine' />
                     <div className='title'>
                         <h1>Monton de datos</h1>
                     </div>
                     <div className='detail' >
                         {
-                            gain
-                                .filter(gain => gain.description === 'gain')
-                                .map(gain =>
-                                    <div key={gain.id} >{gain.price}</div>
+                            fund
+                                .filter(fund => fund.description === 'income')
+                                .map(fund =>
+                                    <div key={fund.id} >{fund.price}</div>
                                 )
                         }
                     </div>
                 </div>
 
-                <div className='spend2' >
-                    <div className='spendLine' />
+                <div className='expense2' >
+                    <div className='expenseLine' />
                     <div className='title'>
                         <h1>Monton de datos</h1>
                     </div>
                     <div className='detail'  >
                         {
-                            gain
-                                .filter(gain => gain.description === 'spend')
-                                .map(gain =>
-                                    <div key={gain.id}>{gain.price}</div>
+                            fund
+                                .filter(fund => fund.description === 'expense')
+                                .map(fund =>
+                                    <div key={fund.id}>{fund.price}</div>
                                 )
                         }
 
