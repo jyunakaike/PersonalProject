@@ -6,6 +6,12 @@ import InitialState from '../InitialState'
 const Finance = () => {
     const [fund, setFund] = useState(InitialState.deposit)
 
+    let newDate = new Date();
+    let date= newDate.getDate();
+    let month = newDate.getMonth() +1;
+    let year = newDate.getFullYear();
+    let fulldate=   `${year}/${month<10?`0${month}`:`${month}`}/${date}`;
+
     // for total
     let IncomesTotal = 0;
     let ExpensesTotal = 0;
@@ -38,14 +44,16 @@ const Finance = () => {
             'price': formData.get('financialInput'),
             'description': 'income',
             'type': formData.get('type'),
+            'date': fulldate
         }
         const addIncome = data => {
             setFund(
                 fund => [...fund, data]
             )
         }
-        console.log(data)
-        addIncome(data)
+        console.log(data);
+        console.log(fulldate);
+        addIncome(data);
     }
 
     // Expense logic 
@@ -59,6 +67,7 @@ const Finance = () => {
             'price': formData.get('financialInput'),
             'description': 'expense',
             'type': formData.get('type'),
+            'date': fulldate
         }
         const addExpense = data => {
             setFund(
@@ -102,11 +111,11 @@ const Finance = () => {
                         </div>
                     </div>
 
-                    <div className='total-period'>
+                    {/* <div className='total-period'>
                         <div>dayly</div>
                         <div>weekly</div>
                         <div>monthly</div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='income' >
@@ -176,7 +185,7 @@ const Finance = () => {
                             fund
                                 .filter(fund => fund.description === 'income')
                                 .map(fund =>
-                                    <div key={fund.id} >{fund.price}</div>
+                                    <div key={fund.id} className='table' >{fund.price}----------{fund.date}</div>
                                 )
                         }
                     </div>
@@ -192,7 +201,7 @@ const Finance = () => {
                             fund
                                 .filter(fund => fund.description === 'expense')
                                 .map(fund =>
-                                    <div key={fund.id}>{fund.price}</div>
+                                    <div key={fund.id} className='table'>{fund.price}----------{fund.date}</div>
                                 )
                         }
 
