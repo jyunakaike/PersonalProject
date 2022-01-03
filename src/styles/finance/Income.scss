@@ -1,0 +1,50 @@
+@use '../vars';
+
+.income{
+    grid-column: 2;
+    grid-row: 1;
+    width: 400px;
+    height: auto;
+
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    // display: flex;
+    //     justify-content: center;
+    //     align-content: center;
+    // display: grid;
+    // grid-template-rows: 1fr 2fr ;
+    // place-content: center;
+}
+.incomeLine{
+    background-color: #136F63 ;
+    width: auto;
+    height: 5%;
+    border-radius: 8px;
+}
+
+.detail{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 25px;
+    display: grid;
+}
+
+// .financial-input{
+//     border-radius: 8px;
+//     width: auto;
+//     height: 50px;
+//     background-color: var(--beauBlue);
+//     border: 0;
+
+//     text-align: right;
+// }
+// .financial-input:hover{
+//     background-color: var(--middleBlueGreen);
+// }
+
+// .financial-input:focus{
+//     border: 0;
+//     background-color: var(--middleBlueGreen);
+//     cursor: pointer;
+// }

@@ -13,3 +13,12 @@ h2{
     font-weight: bold;
     color: var(--darkJungleGreen);
 }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}

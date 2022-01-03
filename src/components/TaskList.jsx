@@ -10,23 +10,23 @@ const TaskList = () => {
     // const navigateClick = () => {
     //     navigate("/Finance")
     // }
-    
+
     return (
         <section className="main-container">
             <div className='taskList'>
-                <Link to="/Finance">
-                    <div className='task'>
+
+                <div className='task'>
+                    <Link to="/Finance">
                         {/* <img src={Coin} alt="Coin" className='Task__Img'/> */}
                         <h1>Finance</h1>
-                    </div>
-                </Link>
-
-                <Link to="/todo" >
-                    <div className='task'>
+                    </Link>
+                </div>
+                <div className='task'>
+                    <Link to="/todo" >
                         {/* <img src="" alt="" /> */}
                         <h1>To Do</h1>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
 
                 <div className='task'>
                     {/* <img src="" alt="" /> */}
@@ -41,7 +41,6 @@ const TaskList = () => {
 
                     <h1>suplies</h1>
                 </div>
-
                 <div className='task'>
                     {/* <img src="" alt="" /> */}
 

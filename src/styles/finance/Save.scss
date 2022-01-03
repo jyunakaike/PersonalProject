@@ -1,0 +1,26 @@
+@use '../vars';
+
+.savingAccount{
+    grid-column: 4;
+    grid-row: 1;
+    width: 400px;
+    height: 350px;
+    background-color: var(--blueBelt);
+    border-radius: 8px;
+    /* background-color: greenyellow; */
+    // display: grid;
+    // grid-template-rows: 1fr 2fr ;
+}
+
+.savingLine{
+    background-color:#FFBC42 ;
+    width: auto;
+    height: 5%;
+    border-radius: 8px;
+}
+.detail{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 25px;
+    display: grid;
+}
