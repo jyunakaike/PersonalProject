@@ -86,6 +86,13 @@ export default {
         'type':'rental',
         'date':'2021/12/23'
       },
+      {
+        'id': '16',
+        'price': 4.5,
+        'description' :'save',
+        'type':'Goal',
+        'date':'2021/12/23'
+      },
       
     ],
   };
