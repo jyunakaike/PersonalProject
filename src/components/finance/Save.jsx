@@ -1,41 +1,56 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import '@styles/finance/Save.scss'
 
 export const Save = ({ initialState, fund, date, saveFunds }) => {
     const formIncome = useRef(initialState);
 
-    let custom = 0;
+    const [error, setError] = useState("");
+
     let monto = null;
+    let formValid = false;
 
     const percentageClick = value => () => {
         monto = fund * (value / 100);
         console.log(monto)
-        // console.log(fund)
-        // console.log(fund *monto)
     }
 
-    const percentageOnChange = value=> {
-        monto= value 
+    const percentageOnChange = value => {
+        monto = value
         console.log(monto)
     }
 
-    const sendDataToFather = () => {
-        // console.log(monto)
-        // console.log(date)
-        // console.log(initialState)
-
-        const formData = new FormData(formIncome.current)
-        const data = {
-            'id': '29',
-            'price': monto,
-            'description': 'save',
-            'type': formData.get('type'),
-            'date': date
+    const validator = (monto) => {
+        if (monto !== null) {
+            formValid = true;
+            return formValid;
+        } else {
+            return formValid;
         }
-        console.log(data);
-        saveFunds(data);
     }
 
+    const sendDataToFather = () => {
+        setError("");
+        console.log(monto);
+        validator(monto);
+        if (formValid) {
+            console.log("validacion correcta")
+            const formData = new FormData(formIncome.current)
+            const data = {
+                'id': '29',
+                'price': monto,
+                'description': 'save',
+                'type': formData.get('type'),
+                'date': date
+            }
+            console.log(data);
+            saveFunds(data);
+
+        }
+        else {
+            console.log("validacion incorrecta")
+            setError("seleccionar monto");
+        }
+    }
     return (
         <article className='savingAccount' >
             <div className='savingLine' />
@@ -75,11 +90,10 @@ export const Save = ({ initialState, fund, date, saveFunds }) => {
                     min="0"
                     placeholder="Custom"
                     value={monto}
-                    onChange={e=> percentageOnChange(e.target.value)}
+                    onChange={e => percentageOnChange(e.target.value)}
                 />
                 <form action="/" ref={formIncome}>
                     <p>Type</p>
-                    {/* <input type="text" className='financial-input' /> */}
                     <select
                         name="type"
                         id='saveSelector'
@@ -90,6 +104,10 @@ export const Save = ({ initialState, fund, date, saveFunds }) => {
                         <option value="Goals">Goals</option>
                     </select>
                 </form>
+
+                <span style={{ color: "red" }}>
+                    {error}
+                </span>
             </div>
         </article>
     )
