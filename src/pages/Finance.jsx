@@ -46,7 +46,7 @@ const Finance = () => {
         })
 
 
-    const total = IncomesTotal - ExpensesTotal;
+    const total = IncomesTotal - ExpensesTotal -SavesTotal;
 
 
     // Incomes logic

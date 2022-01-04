@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import '@styles/finance/Save.scss'
 
-export const Save = ({ initialState, fund, date,saveFunds }) => {
+export const Save = ({ initialState, fund, date, saveFunds }) => {
     const formIncome = useRef(initialState);
 
     let custom = 0;
@@ -40,40 +40,37 @@ export const Save = ({ initialState, fund, date,saveFunds }) => {
             </div>
             <div className='detail'>
                 Monto
-                {/* <div>10% 20% 30% custom</div> */}
-
-                
-                    <div className="percentages" >
-                        <button
-                            className="percentage"
-                            value="5"
-                            onClick={percentageClick(10)}
-                        >
-                            10%
-                        </button>
-                        <button
-                            className="percentage"
-                            value="10"
-                            onClick={percentageClick(20)}
-                        >
-                            20%
-                        </button>
-                        <button
-                            className="percentage"
-                            value="15"
-                            onClick={percentageClick(30)}
-                        >
-                            30%
-                        </button>
-                    </div>
-                    <input
-                        className="custom"
-                        id="input"
-                        type="number"
-                        min="0"
-                        placeholder="Custom"
-                    // onChange={percentageClick()}
-                    />
+                <div className="percentages" >
+                    <button
+                        className="percentage"
+                        value="5"
+                        onClick={percentageClick(10)}
+                    >
+                        10%
+                    </button>
+                    <button
+                        className="percentage"
+                        value="10"
+                        onClick={percentageClick(20)}
+                    >
+                        20%
+                    </button>
+                    <button
+                        className="percentage"
+                        value="15"
+                        onClick={percentageClick(30)}
+                    >
+                        30%
+                    </button>
+                </div>
+                <input
+                    className="custom"
+                    id="input"
+                    type="number"
+                    min="0"
+                    placeholder="Custom"
+                // onChange={percentageClick()}
+                />
                 <form action="/" ref={formIncome}>
                     <p>Type</p>
                     {/* <input type="text" className='financial-input' /> */}
