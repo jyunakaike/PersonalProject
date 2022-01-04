@@ -14,6 +14,11 @@ export const Save = ({ initialState, fund, date, saveFunds }) => {
         // console.log(fund *monto)
     }
 
+    const percentageOnChange = value=> {
+        monto= value 
+        console.log(monto)
+    }
+
     const sendDataToFather = () => {
         // console.log(monto)
         // console.log(date)
@@ -69,7 +74,8 @@ export const Save = ({ initialState, fund, date, saveFunds }) => {
                     type="number"
                     min="0"
                     placeholder="Custom"
-                // onChange={percentageClick()}
+                    value={monto}
+                    onChange={e=> percentageOnChange(e.target.value)}
                 />
                 <form action="/" ref={formIncome}>
                     <p>Type</p>
