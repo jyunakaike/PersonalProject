@@ -10,9 +10,7 @@ const ToDo = () => {
             <h1>Todo</h1>
             <div className='Todo-Container'>
                 <DetailSection />
-                
                 <TodoList />
-
             </div> 
         </React.Fragment>
     )
