@@ -95,4 +95,46 @@ export default {
       },
       
     ],
+    task:[
+      {
+        'id': 1,
+        'task': "Cortar Cebollas",
+        'check': true,
+        'dateStart':'2021/01/10'
+        
+      },
+      {
+        'id': 2,
+        'task': "Cortar Zanahorias",
+        'check': false,
+        'dateStart':'2021/01/10'
+      },
+
+      {
+        'id': 3,
+        'task': "Cocinar",
+        'check': false,
+        'dateStart':'2021/01/10'
+        
+      },
+      {
+        'id': 4,
+        'task': "Tareas",
+        'check': false,
+        'dateStart':'2021/01/10'
+      },
+      // {
+      //   'id': 5,
+      //   'task': "Dormir",
+      //   'check': false,
+      //   'dateStart':'2021/01/10'
+        
+      // },
+      // {
+      //   'id': 6,
+      //   'task': "Preparar Cafe",
+      //   'check': false,
+      //   'dateStart':'2021/01/10'
+      // },
+    ]
   };
