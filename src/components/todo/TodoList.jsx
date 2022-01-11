@@ -2,7 +2,7 @@ import React from 'react'
 
 import { TodoItem } from './TodoItem'
 
-export const TodoList = ({ task, saveTodo }) => {
+export const TodoList = ({ task, saveTodo, children }) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,15 +16,14 @@ export const TodoList = ({ task, saveTodo }) => {
         }
         saveTodo(data)
     };
-
-
     return (
         <section className='TodoList-Container'>
             <header className='Todo-header'>
                 <h1>My Day</h1>
             </header>
             <main className='Todo-main'>
-                <TodoItem task={task} />
+                {/* <TodoItem task={task} /> */}
+                {children}
             </main>
             <footer className='Todo-footer'>
                 <form action="" onSubmit={handleSubmit}>
@@ -34,7 +33,6 @@ export const TodoList = ({ task, saveTodo }) => {
                         id='task'
                         name='task' 
                         placeholder='Add Task'
-                        // value={task}  
                     />
                     <input type="submit" className='input-send' />
                 </form>

@@ -123,18 +123,6 @@ export default {
         'check': false,
         'dateStart':'2021/01/10'
       },
-      // {
-      //   'id': 5,
-      //   'task': "Dormir",
-      //   'check': false,
-      //   'dateStart':'2021/01/10'
-        
-      // },
-      // {
-      //   'id': 6,
-      //   'task': "Preparar Cafe",
-      //   'check': false,
-      //   'dateStart':'2021/01/10'
-      // },
+      
     ]
   };
