@@ -20,13 +20,21 @@ const ToDo = () => {
         console.log(task);
     }
 
+    // TodoItem 
+    const toggleCheck = (e) => {
+        const newTask = [...task]
+        newTask[e - 1].check = !(newTask[e - 1].check);
+        setTask(newTask)
+        console.log(`toggle check changed to ${newTask[e - 1].check }`)
+    }
+
     return (
         <React.Fragment>
             <h1>Todo</h1>
             <div className='Todo-Container'>
                 <DetailSection />
                 <TodoList task={task} saveTodo={saveTodo} >
-                    <TodoItem task={task} />
+                    <TodoItem task={task} toggleCheck={toggleCheck} />
                 </TodoList>
             </div>
         </React.Fragment>

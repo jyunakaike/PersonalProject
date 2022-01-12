@@ -16,6 +16,7 @@ export const TodoList = ({ task, saveTodo, children }) => {
         }
         saveTodo(data)
     };
+    
     return (
         <section className='TodoList-Container'>
             <header className='Todo-header'>
