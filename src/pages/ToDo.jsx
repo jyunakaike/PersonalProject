@@ -22,16 +22,19 @@ const ToDo = () => {
 
     // TodoItem 
     const toggleCheck = (e) => {
+        const findIndex =  task.findIndex(todo=> todo.id === e )
         const newTask = [...task]
-        newTask[e - 1].check = !(newTask[e - 1].check);
+        newTask[findIndex].check = !(newTask[findIndex].check);
         setTask(newTask)
-        console.log(`toggle check changed to ${newTask[e - 1].check }`)
+        console.log(`toggle check changed to ${newTask[findIndex].check }`)
+        console.log(findIndex);
     }
 //delete task
 
     const deleteTask = (e) => {
+        const findIndex = task.findIndex(todo=> todo.id === e)
         const deleteTask =[...task];
-        deleteTask.splice((e-1), 1);
+        deleteTask.splice((findIndex), 1);
         setTask(deleteTask);
         console.log(deleteTask);
     }
