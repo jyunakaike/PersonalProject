@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 
-export const TodoItem = ({ task ,toggleCheck}) => {
+export const TodoItem = ({ task ,toggleCheck, deleteTask}) => {
     const [check, setCheck] = useState(true)
 
-    // const toggleCheck =(e) =>{
-    //     console.log('ha surgido un cambio en check');
-    //     console.log(e);
-    //     // toggleCheckde props
-    // }
+    const toggleDelete = ()=> {
+        console.log('Delete Task')
+    }
 
 
     return (
@@ -18,7 +16,8 @@ export const TodoItem = ({ task ,toggleCheck}) => {
                         {(toDo.check) 
                         ? <input type="checkbox" defaultChecked={check} onChange={()=> toggleCheck(toDo.id)} />
                         : <input type="checkbox" defaultChecked={!check} onChange={()=> toggleCheck(toDo.id)}    />  }
-                        {toDo.id}----------{toDo.task}----------
+                        {toDo.task}
+                        <icon onClick={()=>deleteTask(toDo.id)}>X</icon>
                     </div>
                 )
             }
