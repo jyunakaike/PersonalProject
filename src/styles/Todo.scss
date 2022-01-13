@@ -57,9 +57,11 @@
     display: grid;
     padding-left:15rem ;
     max-width: 100%;
-    max-height: 250px;
-    overflow: scroll;
+    max-height: 300px;
+    min-height: 300px;
+    overflow: auto;
 }
+
 
 .Todo-footer{
     display: grid;
